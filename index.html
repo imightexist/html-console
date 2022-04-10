@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        window.onload = function () {
+            document.getElementById('input').addEventListener('keyup', function (e) {
+                if (e.keyCode == 13) {
+                    document.getElementById('submit').click();
+                }
+            });
+            document.getElementById('submit').onclick = function(){
+                eval(document.getElementById('input').value);
+            }
+        }
+        console.log = function (f) {
+            document.getElementById('console').value += f + '\r\n';
+        }
+        console.debug = function (f) {
+            document.getElementById('console').value += '[DEBUG] ' + f + '\r\n';
+        }
+        console.warn = function (f) {
+            document.getElementById('console').value += '[WARN] ' + f + '\r\n';
+        }
+        console.info = function (f) {
+            document.getElementById('console').value += '[INFO] ' + f + '\r\n';
+        }
+        console.error = function (f) {
+            document.getElementById('console').value += '[ERROR] ' + f + '\r\n';
+        }
+        
+    </script>
+    <title>HTML Javascript Console</title>
+</head>
+
+<body>
+    <textarea style="width:700px;height:500px" id="console"></textarea>
+    <br><br>
+    <input style="width:500px" id="input">
+    <button style="width:195px" id="submit">Submit</button>
+
+</body>
+
+</html>
