@@ -13,6 +13,7 @@
             });
             document.getElementById('submit').onclick = function(){
                 eval(document.getElementById('input').value);
+                document.getElementById('console').scrollTo(0,document.getElementById('console').scrollHeight);
             }
         }
         console.log = function (f) {
@@ -30,7 +31,6 @@
         console.error = function (f) {
             document.getElementById('console').value += '[ERROR] ' + f + '\r\n';
         }
-        
     </script>
     <title>HTML Javascript Console</title>
 </head>
